@@ -35,7 +35,7 @@ int main()
 
 	imprimir("");
 	imprimir("------------ Valor encontrado ------------");
-	agregarDosPosiciones(arreglo, nuevoArreglo, MAXIMO_ARRAY, indice);
+	agregarDosPosiciones(arreglo, nuevoArreglo, indice);
 	imprimir("");
 	imprimir("Arreglo con elemento desplazado 2 posiciones : ");
 	imprimir("");
