@@ -81,26 +81,36 @@ string obtenerMensajeTotal(int opcion){
 
 	switch(opcion) {
 		case 0:
-			mensaje = "La cantidad de clientes con ventas al contado es ";
+			mensaje = "Clientes con ventas al contado : ";
 			break;
 		case 1:
-			mensaje = "La cantidad de clientes con plazo menor a 10 meses es ";
+			mensaje = "Clientes con plazo menor a 10 meses : ";
 			break;
 		case 2:
-			mensaje = "La cantidad de clientes con plazo mayor igual a 10 meses es ";
+			mensaje = "Clientes con plazo mayor igual a 10 meses : ";
 			break;
 	}
 
 	return mensaje;
 }
 
+double obtenerMontoTotal(double ventas[3][9999], int opcion, int maximo) {
+	double monto = 0.0;
+
+	for (int indice = 0; indice <= maximo; indice++) {
+		monto += ventas[opcion][indice];
+	}
+
+	return monto;
+}
+
 void procesarContadores(int opcion, int (&contadores)[3]) {
 	contadores[opcion]++;
 }
 
-void imprimirVentas(string mensaje, int total) {
+void imprimirVentas(string mensaje, int total, double monto) {
 	stringstream  output;
-	output << mensaje << total << "\n";
+	output << mensaje << total << " con un monto de S./" << monto << "\n";
 	cout << output.str();
 }
 
